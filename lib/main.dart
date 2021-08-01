@@ -3,41 +3,29 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Hello world!",
-      home: Scaffold(
-        appBar: AppBar(title: Text("Hello, World")),
-        body: HelloWorld(),
-      )));
+    debugShowCheckedModeBanner: false,
+    title: "Hello World!",
+    home: Scaffold(
+      appBar: AppBar(title: Text("Hello World.")),
+      body: HelloWorld(),
+    ),
+  ));
 }
-
-/*class HelloWorld extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Container(
-        color: Colors.blueAccent,
-        height: 120.0,
-        width: 300.0,
-        child: Center(
-            child: Text("Hello, World!",
-            style: TextStyle(fontSize: 40.0), textAlign: TextAlign.center),
-      ),
-    ));
-  }
-}*/
 
 class HelloWorld extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 120.0,
         width: 300.0,
+        height: 120.0,
         color: Colors.teal,
         child: Center(
-          child: Text("Hello, World!",
-              style: TextStyle(fontSize: 40.0), textAlign: TextAlign.center),
+          child: Text(
+            "Hello World",
+            style: TextStyle(fontSize: 40.0),
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );
