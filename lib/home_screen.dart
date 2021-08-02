@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: SafeArea(child: Text("Hello world")),
     );
   }
 }
