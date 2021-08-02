@@ -28,7 +28,47 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SafeArea(child: Text("Hello world")),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.red,
+              child: Text(
+                'First Text', style: TextStyle(
+                fontSize: 40.0,
+              ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.green,
+              child: Text(
+                'Second Text',
+                style: TextStyle(fontSize: 40.0),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+              child: Text(
+                'Third Text',
+                style: TextStyle(fontSize: 40.0),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.amber,
+              child: Text(
+                'Second Text',
+                style: TextStyle(fontSize: 40.0,),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
