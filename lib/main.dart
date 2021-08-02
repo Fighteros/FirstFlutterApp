@@ -1,33 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/home_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: "Hello World!",
-    home: Scaffold(
-      appBar: AppBar(title: Text("Hello World.")),
-      body: HelloWorld(),
-    ),
-  ));
+  runApp(MyApp());
 }
 
-class HelloWorld extends StatelessWidget {
+// two main widgets {Stateless - Stateful}
+// class MyApp
+
+class MyApp extends StatelessWidget {
   @override
+  // manager (which inside it is seen outside it isn't seen)
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 300.0,
-        height: 120.0,
-        color: Colors.teal,
-        child: Center(
-          child: Text(
-            "Hello World",
-            style: TextStyle(fontSize: 40.0),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
+    // must start my project with MaterialApp
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
