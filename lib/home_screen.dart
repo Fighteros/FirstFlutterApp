@@ -34,15 +34,24 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Stack(
+            alignment: Alignment.bottomCenter,
             children: [
               Image(
-                image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSefdQfM6ZNihgghV7IGLORhw5aG5XzQ2kDxQ&usqp=CAU") ,
+                image: NetworkImage(
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSefdQfM6ZNihgghV7IGLORhw5aG5XzQ2kDxQ&usqp=CAU"),
                 height: 200.0,
                 width: 250.0,
                 fit: BoxFit.cover,
-
               ),
-              Text("Flower", style: TextStyle(fontSize: 35.0, color: Colors.white),)
+              Container(
+                color: Colors.black,
+                width: 250.0,
+                child: Text(
+                  "Flower",
+                  style: TextStyle(fontSize: 35.0, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ],
           ),
         ],
