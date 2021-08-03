@@ -31,53 +31,21 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Container(
-          color: Colors.black45,
-          // width: double.infinity,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+      body: Column(
+        children: [
+          Stack(
             children: [
-              Text("First",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Second",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Third",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("First",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Second",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Third",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("First",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Second",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Third",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
-              Text("Fourth",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Image(
+                image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSefdQfM6ZNihgghV7IGLORhw5aG5XzQ2kDxQ&usqp=CAU") ,
+                height: 200.0,
+                width: 250.0,
+                fit: BoxFit.cover,
+
+              ),
+              Text("Flower", style: TextStyle(fontSize: 35.0, color: Colors.white),)
             ],
           ),
-        ),
+        ],
       ),
     );
   }
