@@ -44,12 +44,9 @@ class HomeScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Container(
-                color: Colors.black,
+                color: Colors.black.withOpacity(.6),
                 width: 250.0,
-                padding: EdgeInsetsDirectional.only(
-                  top: 10.0,
-                  bottom: 10.0
-                ),
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                 child: Text(
                   "Flower",
                   style: TextStyle(fontSize: 20.0, color: Colors.white),
