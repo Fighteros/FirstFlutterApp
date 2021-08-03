@@ -6,68 +6,78 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.blueGrey,
         leading: IconButton(
-          icon:Icon(
-          Icons.menu,
+          icon: Icon(
+            Icons.menu,
+          ),
+          onPressed: () {
+            print("menu");
+          },
         ),
-          onPressed: (){},),
         title: Text("First App"),
         actions: [
           IconButton(
-            icon:  Icon(
-              Icons.notification_important
+            icon: Icon(Icons.notification_important),
+            onPressed: () {
+              print("notification clickd!");
+            },
           ),
-            onPressed: () {print("notification clickd!");}
-            ,),
           IconButton(
-            icon: Icon(
-              Icons.search
-          ),
-          onPressed: (){print("Search is clicked!");},
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print("Search is clicked!");
+            },
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.red,
-              child: Text(
-                'First Text', style: TextStyle(
-                fontSize: 40.0,
-              ),
-              ),
-            ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Container(
+          color: Colors.black45,
+          // width: double.infinity,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("First",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Second",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Third",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("First",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Second",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Third",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("First",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Second",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Third",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+              Text("Fourth",
+                  style: TextStyle(fontSize: 40.0, color: Colors.white)),
+            ],
           ),
-          Expanded(
-            child: Container(
-              color: Colors.green,
-              child: Text(
-                'Second Text',
-                style: TextStyle(fontSize: 40.0),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-              child: Text(
-                'Third Text',
-                style: TextStyle(fontSize: 40.0),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              color: Colors.amber,
-              child: Text(
-                'Second Text',
-                style: TextStyle(fontSize: 40.0,),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
