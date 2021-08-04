@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class LoginScreen extends StatelessWidget {
         // 20 insets or 16
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -26,6 +28,13 @@ class LoginScreen extends StatelessWidget {
               height: 40.0,
             ),
             TextFormField(
+              controller: emailController,
+              onFieldSubmitted: (value) {
+                print(value);
+              },
+              onChanged: (value) {
+                print(value);
+              },
               // Keyboard type
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -36,6 +45,66 @@ class LoginScreen extends StatelessWidget {
                   Icons.email,
                 ),
               ),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            TextFormField(
+              controller: passwordController,
+              onFieldSubmitted: (value) {
+                print(value);
+              },
+              onChanged: (value) {
+                print(value);
+              },
+              // Keyboard type
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Password",
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(
+                  Icons.lock,
+                ),
+                suffixIcon: Icon(
+                  Icons.remove_red_eye,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              width: double.infinity,
+              color: Colors.blue,
+              child: MaterialButton(
+                child: Text(
+                  "LOGIN",
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  print(emailController.text);
+                  print(passwordController.text);
+                },
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an Account?"
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: Text("Register Now") ,
+                ),
+              ],
             ),
           ],
         ),
