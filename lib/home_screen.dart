@@ -37,7 +37,10 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(50.0),
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadiusDirectional.only(
+                  topStart: Radius.circular(20.0),
+                ),
+
               ),
               clipBehavior: Clip.antiAliasWithSaveLayer,
               child: Stack(
