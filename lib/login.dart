@@ -14,6 +14,7 @@ class LoginScreen extends StatelessWidget {
         // 20 insets or 16
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          // may cause over flow error
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
