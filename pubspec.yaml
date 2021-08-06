@@ -32,6 +32,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.9.0"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -74,3 +75,16 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  # add icon
+
+flutter_icons:
+  image_path: "icon/icon.ico"
+  android: true
+  ios: true
+
+# add fonts
+#fonts:
+#  - family: Amiri
+#    fonts:
+#      - asset: fonts/Amiri/Amiri-Regular.ttf

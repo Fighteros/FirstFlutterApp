@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login.dart';
 
-import 'login_screen.dart';
+import 'MessengerClone.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
     // must start my project with MaterialApp
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: Messenger(),
     );
   }
 }
