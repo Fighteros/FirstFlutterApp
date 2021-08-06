@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'UsersScreen.dart';
+import 'package:flutterapp/Counter.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
     // must start my project with MaterialApp
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: UsersScreen(),
+      home: CounterScreen(),
     );
   }
 }
