@@ -633,16 +633,17 @@ class Messenger extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(horizontal: 2.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
                                     child: Text(
                                       "You:  ❤يارب يا بشمهندس والله",
-                                      style: TextStyle(fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(horizontal: 8.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
                                     child: Container(
                                       width: 3.0,
                                       height: 3.0,
@@ -652,9 +653,9 @@ class Messenger extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Text("1m",style: TextStyle(
-                                      fontWeight: FontWeight.w500
-                                  ),),
+                                  Text(
+                                    "1m",
+                                  ),
                                 ],
                               ),
                             ],
@@ -672,8 +673,7 @@ class Messenger extends StatelessWidget {
                               CircleAvatar(
                                 radius: 30.0,
                                 backgroundImage: NetworkImage(
-                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/143090721_2899494637043259_6948776822905969944_n.jpg?_nc_cat=106&ccb=1-4&_nc_sid=7206a8&_nc_eui2=AeHFSQgOI-0cJjKlNWBT1S4Dt32rEAMru4K3fasQAyu7gg_LAt_DgoNJ-TFT4SijJYYZbtLNj1ZIPWFzp1GgolqS&_nc_ohc=tq7f5wG4PuIAX8pp2St&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=b60667a8ed15fbb77139cff13cb08d55&oe=6131F812'
-                                ),
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/143090721_2899494637043259_6948776822905969944_n.jpg?_nc_cat=106&ccb=1-4&_nc_sid=7206a8&_nc_eui2=AeHFSQgOI-0cJjKlNWBT1S4Dt32rEAMru4K3fasQAyu7gg_LAt_DgoNJ-TFT4SijJYYZbtLNj1ZIPWFzp1GgolqS&_nc_ohc=tq7f5wG4PuIAX8pp2St&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=b60667a8ed15fbb77139cff13cb08d55&oe=6131F812'),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.only(
@@ -712,16 +712,17 @@ class Messenger extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 2.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
                                     child: Text(
                                       "https://flutter.dev",
-                                      style: TextStyle(fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
                                     child: Container(
                                       width: 10.0,
                                       height: 10.0,
@@ -731,10 +732,10 @@ class Messenger extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Text("14m",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500
-                                  ),
+                                  Text(
+                                    "14m",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                 ],
                               ),
@@ -753,8 +754,7 @@ class Messenger extends StatelessWidget {
                               CircleAvatar(
                                 radius: 30.0,
                                 backgroundImage: NetworkImage(
-                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p200x200/219787548_2933783466880682_2863240601119422019_n.jpg?_nc_cat=110&ccb=1-4&_nc_sid=dbb9e7&_nc_eui2=AeFuGKPehtuthLmQHoim_luAPl7lKPLRWlU-XuUo8tFaVWKCXEew1g_XdoQ66mC93blSenEc8_3r6lxhxzQmUHFK&_nc_ohc=lJ9NdKVZ_fMAX_fIED7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=f99109fe542498ef2a5e691b5e38cd51&oe=6131DFEB'
-                                ),
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p200x200/219787548_2933783466880682_2863240601119422019_n.jpg?_nc_cat=110&ccb=1-4&_nc_sid=dbb9e7&_nc_eui2=AeFuGKPehtuthLmQHoim_luAPl7lKPLRWlU-XuUo8tFaVWKCXEew1g_XdoQ66mC93blSenEc8_3r6lxhxzQmUHFK&_nc_ohc=lJ9NdKVZ_fMAX_fIED7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=f99109fe542498ef2a5e691b5e38cd51&oe=6131DFEB'),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.only(
@@ -793,16 +793,17 @@ class Messenger extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 2.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
                                     child: Text(
                                       "خلصانة",
-                                      style: TextStyle(fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
                                     child: Container(
                                       width: 10.0,
                                       height: 10.0,
@@ -812,9 +813,11 @@ class Messenger extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Text("15m",style: TextStyle(
-                                      fontWeight: FontWeight.w500
-                                  ),),
+                                  Text(
+                                    "15m",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500),
+                                  ),
                                 ],
                               ),
                             ],
@@ -832,8 +835,7 @@ class Messenger extends StatelessWidget {
                               CircleAvatar(
                                 radius: 30.0,
                                 backgroundImage: NetworkImage(
-                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/228791783_923145371889220_6066316107584179037_n.jpg?_nc_cat=109&ccb=1-4&_nc_sid=7206a8&_nc_eui2=AeGlOeO8sK2rz5a-59pcYHtYWAFmsvl8nzZYAWay-XyfNgHy3hxuWEIBYw4KiC1a7Dr8CpNMtQtOuRotCpxw-lOj&_nc_ohc=NAJodUG5nq0AX8HQ-Xt&_nc_oc=AQkzBCgx1XNLyCZtNsNWlFgBa47bIvhYlYZWShsWFQAiyhscMHLAPI3xHZXjsz4dGX0&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=1f02e2ba5a8abcfba152c1e3c7858bcd&oe=61315572'
-                                ),
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/228791783_923145371889220_6066316107584179037_n.jpg?_nc_cat=109&ccb=1-4&_nc_sid=7206a8&_nc_eui2=AeGlOeO8sK2rz5a-59pcYHtYWAFmsvl8nzZYAWay-XyfNgHy3hxuWEIBYw4KiC1a7Dr8CpNMtQtOuRotCpxw-lOj&_nc_ohc=NAJodUG5nq0AX8HQ-Xt&_nc_oc=AQkzBCgx1XNLyCZtNsNWlFgBa47bIvhYlYZWShsWFQAiyhscMHLAPI3xHZXjsz4dGX0&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=1f02e2ba5a8abcfba152c1e3c7858bcd&oe=61315572'),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.only(
@@ -848,7 +850,17 @@ class Messenger extends StatelessWidget {
                                     bottom: 2.0, end: 2.0),
                                 child: CircleAvatar(
                                   radius: 8.0,
-                                  backgroundColor: Colors.green,
+                                  backgroundColor: Colors.greenAccent[100],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.only(
+                                    bottom: 3.0, end: 2.0),
+                                child: Text(
+                                  "1m",
+                                  style: TextStyle(
+                                      fontSize: 10.0,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ],
@@ -872,16 +884,17 @@ class Messenger extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 2.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
                                     child: Text(
                                       "The voice call ended",
-                                      style: TextStyle(fontWeight: FontWeight.w500),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
                                     child: Container(
                                       width: 10.0,
                                       height: 10.0,
@@ -891,9 +904,11 @@ class Messenger extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Text("5:30 pm",style: TextStyle(
-                                      fontWeight: FontWeight.w500
-                                  ),),
+                                  Text(
+                                    "5:30 pm",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500),
+                                  ),
                                 ],
                               ),
                             ],
@@ -911,8 +926,7 @@ class Messenger extends StatelessWidget {
                               CircleAvatar(
                                 radius: 30.0,
                                 backgroundImage: NetworkImage(
-                                    'https://scontent.xx.fbcdn.net/v/t1.6435-1/p100x100/129513454_2755029271377421_6449477807119458154_n.jpg?_nc_cat=108&ccb=1-4&_nc_sid=dbb9e7&_nc_eui2=AeHC5dORQW8K2FOlj6h2g0QcQN3FUd9ynEtA3cVR33KcS6RdFvRhuuzNcCA0BGegTeeZRUkL5uUFzUqi2wATqcoX&_nc_ohc=IcfY2ib2rXIAX-3xw5r&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=859f8d2fe3cad66444140a1cdb4098b5&oe=6132816D'
-                                ),
+                                    'https://scontent.xx.fbcdn.net/v/t1.6435-1/p100x100/129513454_2755029271377421_6449477807119458154_n.jpg?_nc_cat=108&ccb=1-4&_nc_sid=dbb9e7&_nc_eui2=AeHC5dORQW8K2FOlj6h2g0QcQN3FUd9ynEtA3cVR33KcS6RdFvRhuuzNcCA0BGegTeeZRUkL5uUFzUqi2wATqcoX&_nc_ohc=IcfY2ib2rXIAX-3xw5r&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=859f8d2fe3cad66444140a1cdb4098b5&oe=6132816D'),
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.only(
@@ -951,15 +965,15 @@ class Messenger extends StatelessWidget {
                               Row(
                                 children: [
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 2.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
                                     child: Text(
                                       "You: ok",
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0),
                                     child: Container(
                                       width: 5.0,
                                       height: 5.0,
@@ -969,12 +983,333 @@ class Messenger extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Text("3:30 pm",style: TextStyle(
-                                      fontWeight: FontWeight.w500
-                                  ),),
+                                  Text(
+                                    "3:30 pm",
+                                  ),
                                 ],
                               ),
                             ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          Stack(
+                            alignment: AlignmentDirectional.bottomEnd,
+                            children: [
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p200x200/217874333_3006301659604724_7839216262097352057_n.jpg?_nc_cat=100&ccb=1-4&_nc_sid=dbb9e7&_nc_eui2=AeEsdh9JFg7Brrxroa--xJUs7jtXnhpTHs_uO1eeGlMezyGP1iweCQJptAC-3fY0GF7ykKI8UY6LJPtazfQ_lETi&_nc_ohc=HcEv7gmk7DwAX-Lc2A9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=5d168265447944f3b8d3509ee651708b&oe=61335D23'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Esmail Ramadan",
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
+                                    child: Text(
+                                      "You: ماشي هبقي اشوف الحوار",
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15.0),
+                                    child: Container(
+                                      width: 5.0,
+                                      height: 5.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    "2:30 pm",
+
+                                    maxLines: 1,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          Stack(
+                            alignment: AlignmentDirectional.bottomEnd,
+                            children: [
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/215157285_858061505121725_4721146168275121068_n.jpg?_nc_cat=111&ccb=1-4&_nc_sid=7206a8&_nc_eui2=AeH5JdGX6QRlV5VreldbcI24evQ3CrDrI6p69DcKsOsjqjIgALTgw7mFAYAYnDpUtOObJyesrj8lrLslBydmizOZ&_nc_ohc=4dEHs3splZ4AX8LfEk5&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=210d3406f52c2162ba37113ba60676e7&oe=61346CB8'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Ahmed Batea",
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
+                                    child: Text(
+                                      "You: الحمدلله ",
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15.0),
+                                    child: Container(
+                                      width: 5.0,
+                                      height: 5.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    "2:29 pm",
+                                    maxLines: 1,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          Stack(
+                            alignment: AlignmentDirectional.bottomEnd,
+                            children: [
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.18169-1/c7.0.100.100a/p100x100/26904310_1554714891243247_4590905228403160948_n.jpg?_nc_cat=103&ccb=1-4&_nc_sid=7206a8&_nc_eui2=AeHnRCE2SjOQoigNefDudfeMVLT38enCoxdUtPfx6cKjFz4LFiICx7r6JL0dNDHQwXFMw-iBhHRXCRYujTXkXQfX&_nc_ohc=kTOeNGpBGa0AX8K5tJD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=f1d8ad97112978587dee57112a2dcd38&oe=613280F3'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Mohamed Ali",
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
+                                Row(
+                                  children: [
+                                       Expanded(
+                                         child: Text(
+                                          "https://m.youtube.com/watch?v=UEAMfLPZZhE&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB&index=2",
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                      ),
+                                       ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 15.0),
+                                      child: Container(
+                                        width: 5.0,
+                                        height: 5.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "1:30 pm",
+                                      maxLines: 1,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          Stack(
+                            alignment: AlignmentDirectional.bottomEnd,
+                            children: [
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/222316538_360062742145688_9006687826417627319_n.jpg?_nc_cat=1&ccb=1-4&_nc_sid=3170a5&_nc_eui2=AeHRcpXuEQd5vJsGSgxjnNaJnIdvFN0jytach28U3SPK1ub05iM8ML5dFrgDGpucj71OI8WmYajqlus43BAffThR&_nc_ohc=LmydMV_fVC8AX8YuWm8&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=5e16bcce8e9474186d8a193170959a14&oe=61317C51'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Marwan Pablo",
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        "You: يلا نجم ",
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 15.0),
+                                      child: Container(
+                                        width: 5.0,
+                                        height: 5.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "11:30 am",
+                                      maxLines: 1,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          Stack(
+                            alignment: AlignmentDirectional.bottomEnd,
+                            children: [
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundImage: NetworkImage(
+                                    'https://scontent.fcai20-4.fna.fbcdn.net/v/t1.6435-1/p100x100/175461193_2973241482996477_3435671985326818824_n.png?_nc_cat=1&ccb=1-4&_nc_sid=1eb0c7&_nc_eui2=AeELSZKrRTFw4-me71MdXkZlu-IzBoBlpTS74jMGgGWlNFF_0j79QQcFMHRb3qbZ6uC5He3vkTkoUDppypPVkMee&_nc_ohc=VWZaMIWRnvAAX-9p47G&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fcai20-4.fna&oh=ca989949c560cfccb742adf7d4571e39&oe=6134697A'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Xiaomi Egypt",
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        "You: سعر المي باند 6 كام ",
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 15.0),
+                                      child: Container(
+                                        width: 5.0,
+                                        height: 5.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[200],
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "10:30 am",
+                                      maxLines: 1,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
