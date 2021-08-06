@@ -62,61 +62,63 @@ class Messenger extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Container(
           color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.search,
-                        color: Colors.grey[700],
-                      ),
-                      SizedBox(
-                        width: 7.0,
-                      ),
-                      Text(
-                        "Search",
-                        style: TextStyle(
-                          fontSize: 17.0,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.search,
                           color: Colors.grey[700],
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 7.0,
+                        ),
+                        Text(
+                          "Search",
+                          style: TextStyle(
+                            fontSize: 17.0,
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(20.0)),
+                  height: 40.0,
+                  width: double.infinity,
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                // Stories Row
+                Container(
+                  height: 100.0,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => buildStroyItem(),
+                    separatorBuilder: (context, index) => SizedBox(width: 20.0),
+                    itemCount: 5,
                   ),
                 ),
-                decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(20.0)),
-                height: 40.0,
-                width: double.infinity,
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              // Stories Row
-              Container(
-                height: 100.0,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => buildStroyItem(),
-                  separatorBuilder: (context, index) => SizedBox(width: 20.0),
-                  itemCount: 5,
+                SizedBox(
+                  height: 40.0,
                 ),
-              ),
-              SizedBox(
-                height: 40.0,
-              ),
-              Expanded(
-                child: ListView.separated(
+                ListView.separated(
+                  shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => buildChatItem(),
                     separatorBuilder: (context, index) => SizedBox(height: 10.0,),
                     itemCount: 15
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
