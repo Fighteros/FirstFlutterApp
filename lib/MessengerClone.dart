@@ -100,6 +100,7 @@ class Messenger extends StatelessWidget {
                 // Stories Row
                 Container(
                   height: 100.0,
+
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) => buildStroyItem(),

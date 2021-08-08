@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/BmiResultScreen.dart';
 import 'package:flutterapp/BmiScreen.dart';
+
+import 'MessengerClone2.dart';
 
 
 void main() {
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
     // must start my project with MaterialApp
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BmiScreen(),
+      home: MessengerHomeScreen(),
     );
   }
 }

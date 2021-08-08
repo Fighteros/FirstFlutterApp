@@ -28,7 +28,7 @@ class UsersScreen extends StatelessWidget {
       ),
       body: ListView.separated(
           itemBuilder: (context, index) => buildUserItem(users[index]),
-          separatorBuilder: (contex, index) =>
+          separatorBuilder: (context, index) =>
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 20),
                 child: Container(
