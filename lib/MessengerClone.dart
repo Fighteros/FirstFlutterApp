@@ -11,6 +11,9 @@ class Messenger extends StatelessWidget {
     screenContext = context;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         titleSpacing: 16.0,
         elevation: 0.0,
         backgroundColor: Colors.white,
