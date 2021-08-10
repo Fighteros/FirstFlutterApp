@@ -78,7 +78,7 @@ flutter:
   # add icon
 
 flutter_icons:
-  image_path: "assets/icon/gt.png"
+  image_path: "assets/icon/icon.ico"
   android: true
   ios: false
 

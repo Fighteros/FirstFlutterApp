@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/BmiResultScreen.dart';
-import 'package:flutterapp/BmiScreen.dart';
 
-import 'MessengerClone2.dart';
+import 'LoginScreen.dart';
+import 'MessengerClone.dart';
+import 'SingleChatScreen.dart';
 
 
 void main() {
@@ -19,8 +19,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // must start my project with MaterialApp
     return MaterialApp(
+      routes:{
+        "/home" : (context) => Messenger(),
+        "/chat" : (context) => SingleChatScreen(),
+      } ,
       debugShowCheckedModeBanner: false,
-      home: MessengerHomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
