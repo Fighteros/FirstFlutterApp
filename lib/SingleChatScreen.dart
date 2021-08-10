@@ -204,7 +204,7 @@ class SingleChatScreenState extends State<SingleChatScreen> {
     setState(() {
       msgController.addListener(() {
         isTyping = (msgController.text.isEmpty)? false : true;
-        log("is Typing?: $isTyping");
+        // log("is Typing?: $isTyping");
       });
     });
   }
@@ -213,9 +213,11 @@ class SingleChatScreenState extends State<SingleChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
         backgroundColor: Colors.white,
         elevation: 0.0,
-        titleSpacing: 16.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
