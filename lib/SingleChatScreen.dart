@@ -306,5 +306,6 @@ class SingleChatScreenState extends State<SingleChatScreen> {
       ),
     );
   }
+
 }
 
