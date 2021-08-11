@@ -15,23 +15,16 @@ class SingleChatScreenState extends State<SingleChatScreen> {
   bool isSent = true;
   bool isTyping = true;
   bool hasTapped = false;
-
   late var msgLength;
   late var msgSent;
   late var msgRcvd;
   var msgController = TextEditingController();
   late var textFormWidth;
-
   late var normalBottomRow;
-
   late var typingBottomRow;
-  var counter = 0;
 
   var txtfocusNode = FocusNode();
   var typingfocusNode = FocusNode();
-
-
-
 
   @override
   void initState() {
@@ -73,9 +66,7 @@ class SingleChatScreenState extends State<SingleChatScreen> {
             child: TextFormField(
               focusNode: txtfocusNode,
               onTap: () {
-                setState(() {
-
-                });
+                setState(() {});
               },
               controller: msgController,
               decoration: InputDecoration.collapsed(
@@ -116,9 +107,8 @@ class SingleChatScreenState extends State<SingleChatScreen> {
               child: TextFormField(
                 focusNode: typingfocusNode,
                 onChanged: (value) {
-                  if(value.isEmpty)
                   setState(() {
-                    counter++;
+
                   });
                 },
                 controller: msgController,
@@ -214,15 +204,13 @@ class SingleChatScreenState extends State<SingleChatScreen> {
         ),
       ],
     );
+
     setState(() {
       txtfocusNode.addListener(() {
         hasTapped = (txtfocusNode.hasFocus)? true : false;
         typingfocusNode.requestFocus();
       });
 
-      msgController.addListener(() {
-        isTyping = (msgController.text.isEmpty && (counter > 0 ))? false : true;
-      });
 /*      msgController.addListener(() {
         isTyping = (msgController.text.isEmpty)? false : true;
       });*/
@@ -233,9 +221,7 @@ class SingleChatScreenState extends State<SingleChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black
-        ),
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         elevation: 0.0,
         title: Row(
@@ -299,23 +285,26 @@ class SingleChatScreenState extends State<SingleChatScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Container(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              msgRcvd,
-              SizedBox(
-                height: 10.0,
-              ),
-              msgSent,
-              if(hasTapped &&  isTyping) typingBottomRow else normalBottomRow,
-            ],
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                msgRcvd,
+                SizedBox(
+                  height: 10.0,
+                ),
+                msgSent,
+                (hasTapped)? typingBottomRow : normalBottomRow,
+              ],
+            ),
           ),
         ),
       ),
     );
   }
-
 }
+
