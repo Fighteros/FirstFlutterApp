@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SingleChatScreen extends StatefulWidget {
+  const SingleChatScreen({Key? key}) : super(key: key);
+
   @override
   SingleChatScreenState createState() => SingleChatScreenState();
 }
@@ -11,17 +13,25 @@ class SingleChatScreen extends StatefulWidget {
 class SingleChatScreenState extends State<SingleChatScreen> {
   // dummy response
   bool isSent = true;
-  bool isTyping = false;
+  bool isTyping = true;
+  bool hasTapped = false;
 
-  var msgLength;
-  var msgSent;
-  var msgRcvd;
+  late var msgLength;
+  late var msgSent;
+  late var msgRcvd;
   var msgController = TextEditingController();
-  var textFormWidth;
+  late var textFormWidth;
 
-  var normalBottomRow;
+  late var normalBottomRow;
 
-  var typingBottomRow;
+  late var typingBottomRow;
+  var counter = 0;
+
+  var txtfocusNode = FocusNode();
+  var typingfocusNode = FocusNode();
+
+
+
 
   @override
   void initState() {
@@ -61,7 +71,8 @@ class SingleChatScreenState extends State<SingleChatScreen> {
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: TextFormField(
-              onChanged: (value) {
+              focusNode: txtfocusNode,
+              onTap: () {
                 setState(() {
 
                 });
@@ -103,14 +114,16 @@ class SingleChatScreenState extends State<SingleChatScreen> {
             child: Padding(
               padding: const EdgeInsets.all(5.0),
               child: TextFormField(
+                focusNode: typingfocusNode,
                 onChanged: (value) {
+                  if(value.isEmpty)
                   setState(() {
-
+                    counter++;
                   });
                 },
                 controller: msgController,
                 decoration: InputDecoration.collapsed(
-                  hintText: "Aa",
+                  hintText: "Type a Message",
                 ),
               ),
             ),
@@ -202,10 +215,17 @@ class SingleChatScreenState extends State<SingleChatScreen> {
       ],
     );
     setState(() {
-      msgController.addListener(() {
-        isTyping = (msgController.text.isEmpty)? false : true;
-        // log("is Typing?: $isTyping");
+      txtfocusNode.addListener(() {
+        hasTapped = (txtfocusNode.hasFocus)? true : false;
+        typingfocusNode.requestFocus();
       });
+
+      msgController.addListener(() {
+        isTyping = (msgController.text.isEmpty && (counter > 0 ))? false : true;
+      });
+/*      msgController.addListener(() {
+        isTyping = (msgController.text.isEmpty)? false : true;
+      });*/
     });
   }
 
@@ -290,11 +310,12 @@ class SingleChatScreenState extends State<SingleChatScreen> {
                 height: 10.0,
               ),
               msgSent,
-              if (isTyping) typingBottomRow else normalBottomRow,
+              if(hasTapped &&  isTyping) typingBottomRow else normalBottomRow,
             ],
           ),
         ),
       ),
     );
   }
+
 }

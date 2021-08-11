@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
       passwordController.addListener(() {
         isLoginBtnDisabled = ((emailOrPhoneController.text.isEmpty &&
                     passwordController.text.isEmpty) ||
-                (passwordController.text.isEmpty))
+                (passwordController.text.isEmpty) || (emailOrPhoneController.text.isEmpty))
             ? true
             : false;
       });
