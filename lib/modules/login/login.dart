@@ -66,7 +66,7 @@ class _LoginScreencState extends State<LoginScreenc> {
                     controller: passwordController,
                     label: "Password",
                     prefixIcon: Icons.lock,
-                    suffixIcon: Icons.remove_red_eye,
+                    suffixIcon: isPassword? Icons.visibility: Icons.visibility_off,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Password must not be empty';

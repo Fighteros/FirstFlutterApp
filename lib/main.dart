@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'layout/home_layout.dart';
 import 'modules/login/LoginScreen.dart';
 import 'modules/home/MessengerClone.dart';
 import 'modules/login/login.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     // must start my project with MaterialApp
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreenc(),
+      home: HomeLayout(),
     );
   }
 }
