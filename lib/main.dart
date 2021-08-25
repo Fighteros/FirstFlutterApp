@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'LoginScreen.dart';
-import 'MessengerClone.dart';
-import 'SingleChatScreen.dart';
+import 'modules/login/LoginScreen.dart';
+import 'modules/home/MessengerClone.dart';
+import 'single_chat_screen/SingleChatScreen.dart';
 
 
 void main() {
