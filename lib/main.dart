@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'modules/login/LoginScreen.dart';
 import 'modules/home/MessengerClone.dart';
+import 'modules/login/login.dart';
+import 'modules/login/login_screen.dart';
 import 'single_chat_screen/SingleChatScreen.dart';
 
 
@@ -19,12 +21,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // must start my project with MaterialApp
     return MaterialApp(
-      routes:{
-        "/home" : (context) => Messenger(),
-        "/chat" : (context) => SingleChatScreen(),
-      } ,
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: LoginScreenc(),
     );
   }
 }
