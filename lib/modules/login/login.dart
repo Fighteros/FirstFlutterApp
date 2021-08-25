@@ -3,10 +3,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/shared/components/components.dart';
 
-class LoginScreenc extends StatelessWidget {
+class LoginScreenc extends StatefulWidget {
+  @override
+  _LoginScreencState createState() => _LoginScreencState();
+}
+
+class _LoginScreencState extends State<LoginScreenc> {
   final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
-  final bool passwordStatus = true;
+
+   bool isPassword = true;
+
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -34,49 +42,38 @@ class LoginScreenc extends StatelessWidget {
                   SizedBox(
                     height: 40.0,
                   ),
-                  TextFormField(
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'email address must not be empty';
-                      }
-                      return null;
-                    },
-                    controller: emailController,
-                    // Keyboard type
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      // hintText: "Email Address",
-                      labelText: "Email Address",
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(
-                        Icons.email,
-                      ),
-                    ),
-                  ),
+                  defaultFormField(
+                      controller: emailController,
+                      label: "Email Address",
+                      type: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'email address must not be empty';
+                        }
+                        return null;
+                      },
+                      prefixIcon: Icons.email),
                   SizedBox(
                     height: 15.0,
                   ),
-                  TextFormField(
+                  defaultFormField(
+                    onEyePress: () {
+                      setState(() {
+                        isPassword = !isPassword;
+                      });
+                    },
+                    isPassword: isPassword? true : false,
+                    controller: passwordController,
+                    label: "Password",
+                    prefixIcon: Icons.lock,
+                    suffixIcon: Icons.remove_red_eye,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Password must not be empty ';
+                        return 'Password must not be empty';
                       }
                       return null;
                     },
-                    controller: passwordController,
-                    // Keyboard type
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: passwordStatus,
-                    decoration: InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(
-                        Icons.lock,
-                      ),
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye,
-                      ),
-                    ),
+                    type: TextInputType.visiblePassword,
                   ),
                   SizedBox(
                     height: 20.0,

@@ -26,4 +26,30 @@ Widget defaultButton(
     );
 
 // default text form filed
+Widget defaultFormField({
+  required TextEditingController controller,
+  required TextInputType type,
+  required String label,
+  VoidCallback? onSubmit,
+  Function(dynamic val)? onChanged,
+  required Function(String? val) validator,
+  required IconData? prefixIcon,
+  VoidCallback? onEyePress,
+  IconData? suffixIcon,
+  bool isPassword = false,
+}) => TextFormField(
+  obscureText: isPassword,
+  onChanged: onChanged,
+  validator: (value)=>validator(value),
+  controller: controller,
+  // Keyboard type
+  keyboardType: type,
+  decoration: InputDecoration(
+    // hintText: "Email Address",
+    labelText: label,
+    border: OutlineInputBorder(),
+    prefixIcon: Icon(prefixIcon),
+    suffixIcon: suffixIcon != null ? IconButton(icon: Icon(suffixIcon), onPressed: onEyePress): null,
+  ),
+);
 
