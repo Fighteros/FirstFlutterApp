@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/modules/archived_tasks/archived_tasks.dart';
 import 'package:flutterapp/modules/done_tasks/done_tasks.dart';
 import 'package:flutterapp/modules/new_tasks/new_tasks.dart';
+import 'package:sqflite/sqflite.dart';
 
 class HomeLayout extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
+
   List<Widget> screens = [
     NewTasksScreen(),
     DoneTasksScreen(),
@@ -24,6 +26,13 @@ class _HomeLayoutState extends State<HomeLayout> {
     'Done Tasks',
     'Archived Tasks',
   ];
+
+
+  @override
+  void initState() {
+    super.initState();
+    createDatabase();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,4 +81,26 @@ class _HomeLayoutState extends State<HomeLayout> {
   }
 
   Future<String> getName() async => 'Ahmed Ali';
+
+  void createDatabase() async {
+    var database = await openDatabase(
+      'todo.db',
+      version: 1,
+      onCreate: (database, version) {
+        print('database created!');
+         database.execute(
+           'CREATE TABLE tasks (id INTEGER PRIMARY KEY, title TEXT, date, TEXT, time TEXT, status TEXT )'
+         ).then((value) => {
+           print('table created!')
+         }).catchError((error) {
+           print('error on creating table ${error.toString()}');
+         });
+      },
+      onOpen: (database) {
+        print('database open!');
+      },
+    );
+  }
+
+  void insertToDatabase() {}
 }
