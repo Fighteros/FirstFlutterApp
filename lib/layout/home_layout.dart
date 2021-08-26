@@ -14,6 +14,8 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
+  late Database database;
+  var scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> screens = [
     NewTasksScreen(),
@@ -27,7 +29,6 @@ class _HomeLayoutState extends State<HomeLayout> {
     'Archived Tasks',
   ];
 
-
   @override
   void initState() {
     super.initState();
@@ -37,20 +38,12 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: Text(titles[currentIndex]),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => getName().then((value) {
-          //  the return type of an error handler is not acceptable as the value of the future.
-          // after lambda expression is executed it gone so we wouldn't know where the error came from
-          // because also the return type is dynamic so we can't get to an datatype interface so it may be null since it's dynamic
-          if (value is FutureOr) {
-            throw ("error");
-          }
-        }).catchError((error) {
-          print(error.toString());
-        }),
+        onPressed: () => insertToDatabase(),
         child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -83,18 +76,18 @@ class _HomeLayoutState extends State<HomeLayout> {
   Future<String> getName() async => 'Ahmed Ali';
 
   void createDatabase() async {
-    var database = await openDatabase(
+    database = await openDatabase(
       'todo.db',
       version: 1,
       onCreate: (database, version) {
         print('database created!');
-         database.execute(
-           'CREATE TABLE tasks (id INTEGER PRIMARY KEY, title TEXT, date, TEXT, time TEXT, status TEXT )'
-         ).then((value) => {
-           print('table created!')
-         }).catchError((error) {
-           print('error on creating table ${error.toString()}');
-         });
+        database
+            .execute(
+                'CREATE TABLE tasks (id INTEGER PRIMARY KEY, title TEXT, date, TEXT, time TEXT, status TEXT )')
+            .then((value) => {print('table created!')})
+            .catchError((error) {
+          print('error on creating table ${error.toString()}');
+        });
       },
       onOpen: (database) {
         print('database open!');
@@ -102,5 +95,14 @@ class _HomeLayoutState extends State<HomeLayout> {
     );
   }
 
-  void insertToDatabase() {}
+  void insertToDatabase() async {
+    await database.transaction((txn) => txn
+            .rawInsert(
+                'INSERT INTO tasks(title, date, time, status) VALUES("First task", "0222", "001", "new")')
+            .then((value) {
+          print('$value Inserted Successfully');
+        }).catchError((error) {
+          print('error is ${error.toString()}');
+        }));
+  }
 }
