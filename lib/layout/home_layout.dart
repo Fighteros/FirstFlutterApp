@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/modules/archived_tasks/archived_tasks.dart';
@@ -30,10 +32,14 @@ class _HomeLayoutState extends State<HomeLayout> {
         title: Text(titles[currentIndex]),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          var name = await getName();
-          print(name);
-        },
+        onPressed: () => getName().then((value){
+          //  the return type of an error handler is not acceptable as the value of the future.
+          // after lambda expression is executed it gone so we wouldn't know where the error came from
+          // because also the return type is dynamic so we can't get to an datatype interface so it may be null since it's dynamic
+          if(value is FutureOr) {
+            throw("error");
+          }
+        }).catchError((error) =>  print(error.toString()) ) ,
         child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -63,5 +69,5 @@ class _HomeLayoutState extends State<HomeLayout> {
     );
   }
 
-  Future<String> getName() async => 'Ahmed Ali';
+  Future<String> getName() async =>'Ahmed Ali';
 }
