@@ -30,16 +30,21 @@ Widget defaultFormField({
   required TextEditingController controller,
   required TextInputType type,
   required String label,
-  VoidCallback? onSubmit,
+  Function(dynamic val)? onSubmit,
   Function(dynamic val)? onChanged,
+  void Function()? onTap,
   required Function(String? val) validator,
   required IconData? prefixIcon,
   VoidCallback? onEyePress,
   IconData? suffixIcon,
   bool isPassword = false,
+  bool isEnabled = true
 }) => TextFormField(
+  enabled: isEnabled,
   obscureText: isPassword,
   onChanged: onChanged,
+  onTap: onTap,
+  onFieldSubmitted: onSubmit,
   validator: (value)=>validator(value),
   controller: controller,
   // Keyboard type

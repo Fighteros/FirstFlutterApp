@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/modules/archived_tasks/archived_tasks.dart';
 import 'package:flutterapp/modules/done_tasks/done_tasks.dart';
 import 'package:flutterapp/modules/new_tasks/new_tasks.dart';
+import 'package:flutterapp/shared/components/components.dart';
+import 'package:intl/intl.dart';
 import 'package:sqflite/sqflite.dart';
 
 class HomeLayout extends StatefulWidget {
@@ -16,6 +18,12 @@ class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
   late Database database;
   var scaffoldKey = GlobalKey<ScaffoldState>();
+  var formKey = GlobalKey<FormState>();
+  bool isBottomSheetShown = false;
+  IconData fabIcon = Icons.add;
+  var titleController = TextEditingController();
+  var timeController = TextEditingController();
+  var dateController = TextEditingController();
 
   List<Widget> screens = [
     NewTasksScreen(),
@@ -43,8 +51,113 @@ class _HomeLayoutState extends State<HomeLayout> {
         title: Text(titles[currentIndex]),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => insertToDatabase(),
-        child: Icon(Icons.add),
+        onPressed: () {
+          if (isBottomSheetShown) {
+            // to make sure it's valid form before a user tries to
+            // close the bottomSheet
+            if (formKey.currentState!.validate()) {
+              insertToDatabase(
+                title: titleController.text,
+                date: dateController.text,
+                time: timeController.text,
+              ).then((value) {
+                if (value is FutureOr) {
+                  Navigator.pop(context);
+                  isBottomSheetShown = false;
+                  setState(() {
+                    fabIcon = Icons.edit;
+                  });
+                }
+              }).catchError((error) => print(error.toString()));
+              // close the BottomSheet
+
+            }
+          } else {
+            scaffoldKey.currentState?.showBottomSheet((context) => Container(
+                  color: Colors.grey[100],
+                  padding: EdgeInsets.all(20.0),
+                  child: Form(
+                    key: formKey,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        defaultFormField(
+                          controller: titleController,
+                          type: TextInputType.text,
+                          label: 'Task Title',
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Title mustn\'t be empty';
+                            }
+                            return null;
+                          },
+                          prefixIcon: Icons.title,
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        defaultFormField(
+                          controller: timeController,
+                          type: TextInputType.datetime,
+                          onTap: () {
+                            showTimePicker(
+                                    context: context,
+                                    initialTime: TimeOfDay.now())
+                                .then((value) {
+                              if (value != null) {
+                                timeController.text = value.format(context);
+                                print(value.format(context));
+                              }
+                            });
+                          },
+                          label: 'Task Time',
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'time mustn\'t be empty';
+                            }
+                            return null;
+                          },
+                          prefixIcon: Icons.watch_later_outlined,
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        defaultFormField(
+                          controller: dateController,
+                          type: TextInputType.datetime,
+                          onTap: () {
+                            showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime.now(),
+                                    lastDate: DateTime.parse('2021-11-03'))
+                                .then((value) {
+                              if (value != null) {
+                                dateController.text =
+                                    DateFormat.yMMMd().format(value);
+                              }
+                            });
+                          },
+                          label: 'Task Date',
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'date mustn\'t be empty';
+                            }
+                            return null;
+                          },
+                          prefixIcon: Icons.calendar_today,
+                        ),
+                      ],
+                    ),
+                  ),
+                ));
+            isBottomSheetShown = true;
+            setState(() {
+              fabIcon = Icons.add;
+            });
+          }
+        },
+        child: Icon(fabIcon),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -95,10 +208,14 @@ class _HomeLayoutState extends State<HomeLayout> {
     );
   }
 
-  void insertToDatabase() async {
-    await database.transaction((txn) => txn
+  Future insertToDatabase({
+    required String title,
+    required String time,
+    required String date,
+  }) async {
+    return await database.transaction((txn) => txn
             .rawInsert(
-                'INSERT INTO tasks(title, date, time, status) VALUES("First task", "0222", "001", "new")')
+                'INSERT INTO tasks(title, date, time, status) VALUES("$title", "$date", "$time", "new")')
             .then((value) {
           print('$value Inserted Successfully');
         }).catchError((error) {
