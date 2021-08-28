@@ -66,13 +66,14 @@ class _HomeLayoutState extends State<HomeLayout> {
                 date: dateController.text,
                 time: timeController.text,
               ).then((value) {
-                if (value is FutureOr) {
+                getDataFromDatabase(database).then((value) {
                   Navigator.pop(context);
-                  isBottomSheetShown = false;
                   setState(() {
+                    tasks = value;
+                    isBottomSheetShown = false;
                     fabIcon = Icons.edit;
                   });
-                }
+                });
               }).catchError((error) => print(error.toString()));
               // close the BottomSheet
 

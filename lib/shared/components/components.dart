@@ -74,6 +74,7 @@ Widget buildTaskItem(Map model) => Padding(
             width: 20.0,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
