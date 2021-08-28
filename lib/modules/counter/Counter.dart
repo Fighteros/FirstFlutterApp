@@ -47,6 +47,8 @@ class CounterScreen extends StatelessWidget {
           ),
         ),
         listener: (context, state) {
+          if(state is CounterPlusState) print("Plus state");
+          if(state is CounterMinusState) print("Minus state");
         },
       ),
     );
