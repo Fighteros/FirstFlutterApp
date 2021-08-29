@@ -1,16 +1,12 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/shared/bloc_observer.dart';
 
 import 'layout/home_layout.dart';
-import 'modules/counter/Counter.dart';
-import 'modules/login/LoginScreen.dart';
-import 'modules/home/MessengerClone.dart';
-import 'modules/login/login.dart';
-import 'modules/login/login_screen.dart';
-import 'single_chat_screen/SingleChatScreen.dart';
-
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(MyApp());
 }
 
@@ -24,7 +20,7 @@ class MyApp extends StatelessWidget {
     // must start my project with MaterialApp
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterScreen(),
+      home: HomeLayout(),
     );
   }
 }

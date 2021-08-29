@@ -6,7 +6,6 @@ import 'package:flutterapp/modules/counter/cubit/states.dart';
 import 'cubit/cubit.dart';
 
 class CounterScreen extends StatelessWidget {
-
   // calls
   // 1. constructor
   //2. init state
@@ -21,34 +20,54 @@ class CounterScreen extends StatelessWidget {
             title: Text("Counter"),
           ),
           body: Center(
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
-                    onPressed: () {
-                      CounterCubit.get(context).minus();
-                    },
-                    child: Text("MINUS")),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    "${CounterCubit.get(context).counter}",
-                    style:
-                        TextStyle(fontWeight: FontWeight.w900, fontSize: 50.0),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          CounterCubit.get(context).minus();
+                        },
+                        child: Text("MINUS")),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Text(
+                        "${CounterCubit.get(context).counter}",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900, fontSize: 50.0),
+                      ),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          CounterCubit.get(context).plus();
+                        },
+                        child: Text("PLUS")),
+                  ],
                 ),
-                TextButton(
-                    onPressed: () {
-                      CounterCubit.get(context).plus();
-                    },
-                    child: Text("PLUS")),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        CounterCubit.get(context).reset();
+                      },
+                      child: Text('RESET'),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
         ),
         listener: (context, state) {
-          if(state is CounterPlusState) print("Plus state");
-          if(state is CounterMinusState) print("Minus state");
+          if (state is CounterPlusState) {
+            print("Plus state ${state.counter}");
+          }
+          if (state is CounterMinusState) {
+            print("Minus state ${state.counter}");
+          }
         },
       ),
     );
