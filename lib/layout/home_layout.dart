@@ -180,7 +180,7 @@ class HomeLayout extends StatelessWidget {
               ],
             ),
             body: BuildCondition(
-              condition: true,
+              condition: state is! AppGetDateBaseLoadingState,
               builder: (context) => cubit.screens[cubit.currentIndex],
               fallback: (context) => Center(child: CircularProgressIndicator()),
             ),

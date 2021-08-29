@@ -8,6 +8,8 @@ class AppCreateDateBaseState extends AppStates {}
 
 class AppGetDateBaseState extends AppStates {}
 
+class AppGetDateBaseLoadingState extends AppStates {}
+
 class AppInsertDateBaseState extends AppStates {}
 
 class AppChangeBottomSheetState extends AppStates {}
