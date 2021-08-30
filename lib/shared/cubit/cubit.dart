@@ -11,7 +11,9 @@ import 'package:sqflite/sqflite.dart';
 class AppCubit extends Cubit<AppStates> {
   int currentIndex = 0;
   late Database database;
-  List<Map> tasks = [];
+  List<Map> newTasks = [];
+  List<Map> doneTasks = [];
+  List<Map> archivedTasks = [];
   bool isBottomSheetShown = false;
   IconData fabIcon = Icons.add;
 
@@ -42,6 +44,7 @@ class AppCubit extends Cubit<AppStates> {
     emit(AppChangeBottomSheetState());
   }
 
+  // create local db and open it if found just open it
   void createDatabase() {
     openDatabase(
       'todo.db',
@@ -53,14 +56,11 @@ class AppCubit extends Cubit<AppStates> {
                 'CREATE TABLE tasks (id INTEGER PRIMARY KEY, title TEXT, date, TEXT, time TEXT, status TEXT )')
             .then((value) => {print('table created!')})
             .catchError((error) {
-          print('error on creating table ${error.toString()}');
+          print('Error When Creating Table ${error.toString()}');
         });
       },
       onOpen: (database) {
-        getDataFromDatabase(database).then((value) {
-          tasks = value;
-          emit(AppGetDateBaseState());
-        });
+        getDataFromDatabase(database);
         print('database open!');
       },
     ).then((value) {
@@ -69,7 +69,8 @@ class AppCubit extends Cubit<AppStates> {
     });
   }
 
-  insertToDatabase({
+  // insert into db
+  void insertToDatabase({
     required String title,
     required String time,
     required String date,
@@ -81,17 +82,55 @@ class AppCubit extends Cubit<AppStates> {
           print('$value Inserted Successfully');
           emit(AppInsertDateBaseState());
 
-          getDataFromDatabase(database).then((value) {
-            tasks = value;
-            emit(AppGetDateBaseState());
-          });
+          getDataFromDatabase(database);
         }).catchError((error) {
           print('error is ${error.toString()}');
         }));
   }
 
-  Future<List<Map>> getDataFromDatabase(database) async {
+
+  // update db
+  void updateData({
+    required String status,
+    required int id,
+  }) {
+    database.rawUpdate('UPDATE tasks SET status = ? WHERE id= ?',
+        ['$status', id]).then((value) {
+      getDataFromDatabase(database);
+      emit(AppUpdateDateBaseState());
+    });
+  }
+
+
+  void deleteData({
+    required int id,
+  }) {
+    database.rawDelete('DELETE FROM tasks WHERE id= ?',
+        [id]).then((value) {
+      getDataFromDatabase(database);
+      emit(AppDeleteDateBaseState());
+    });
+  }
+
+  // get from db
+  void getDataFromDatabase(database) async {
+    newTasks = [];
+    doneTasks = [];
+    archivedTasks = [];
+
     emit(AppGetDateBaseLoadingState());
-    return await database.rawQuery('SELECT * FROM tasks');
+    database.rawQuery('SELECT * FROM tasks').then((value) {
+      value.forEach((task)
+      {
+        if(task['status'] == 'new')
+          newTasks.add(task);
+        else if(task['status'] == 'done')
+          doneTasks.add(task);
+        else
+          archivedTasks.add(task);
+      }
+      );
+      emit(AppGetDateBaseState());
+    });
   }
 }

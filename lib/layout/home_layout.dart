@@ -20,10 +20,11 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
+      // create call or open and .. is to create anonymous object
       create: (context) => AppCubit()..createDatabase(),
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {
-          if(state is AppInsertDateBaseState){
+          if (state is AppInsertDateBaseState) {
             Navigator.pop(context);
           }
         },
@@ -40,22 +41,10 @@ class HomeLayout extends StatelessWidget {
                   // to make sure it's valid form before a user tries to
                   // close the bottomSheet
                   if (formKey.currentState!.validate()) {
-                    cubit.insertToDatabase(title: titleController.text, time: timeController.text, date: dateController.text);
-                      //                     insertToDatabase(
-//                       title: titleController.text,
-//                       date: dateController.text,
-//                       time: timeController.text,
-//                     ).then((value) {
-//                       getDataFromDatabase(database).then((value) {
-//                         Navigator.pop(context);
-// /*                  setState(() {
-//                         tasks = value;
-//                         isBottomSheetShown = false;
-//                         fabIcon = Icons.edit;
-//                       });*/
-//                       });
-//                     }).catchError((error) => print(error.toString()));
-//                     // close the BottomSheet
+                    cubit.insertToDatabase(
+                        title: titleController.text,
+                        time: timeController.text,
+                        date: dateController.text);
                   }
                 } else {
                   scaffoldKey.currentState
@@ -158,11 +147,6 @@ class HomeLayout extends StatelessWidget {
               currentIndex: AppCubit.get(context).currentIndex,
               onTap: (index) {
                 cubit.changeIndex(index);
-/*
-              setState(() {
-                currentIndex = index;
-              });
-*/
               },
               items: [
                 BottomNavigationBarItem(
@@ -189,7 +173,4 @@ class HomeLayout extends StatelessWidget {
       ),
     );
   }
-
-//Future<String> getName() async => 'Ahmed Ali';
-
 }
