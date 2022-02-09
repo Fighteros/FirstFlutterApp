@@ -3,12 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/shared/bloc_observer.dart';
+import 'package:flutterapp/shared/network/remote/dio_helper.dart';
 
 import 'layout/news-app/news-app.dart';
 import 'layout/todo-app/todo_layout.dart';
 
 void main() {
   Bloc.observer = MyBlocObserver();
+  DioHelper.init();
   runApp(MyApp());
 }
 
@@ -22,6 +24,10 @@ class MyApp extends StatelessWidget {
     // must start my project with MaterialApp
     return MaterialApp(
       theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.deepPurple
+        ),
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(
@@ -46,8 +52,15 @@ class MyApp extends StatelessWidget {
           elevation: 20.0
         )
       ),
+      themeMode: ThemeMode.light ,
+      darkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.black26,
+      ),
       debugShowCheckedModeBanner: false,
-      home: NewsLayout(),
+      home: Directionality(
+          textDirection: TextDirection.rtl,
+          child: NewsLayout()
+      ),
     );
   }
 }
