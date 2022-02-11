@@ -133,4 +133,11 @@ class AppCubit extends Cubit<AppStates> {
       emit(AppGetDateBaseState());
     });
   }
+
+  bool isDark = false;
+
+  void changeAppMode() {
+    isDark = !isDark;
+    emit(AppChangeModeState());
+  }
 }

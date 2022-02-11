@@ -17,3 +17,9 @@ class AppUpdateDateBaseState extends AppStates {}
 class AppDeleteDateBaseState extends AppStates {}
 
 class AppChangeBottomSheetState extends AppStates {}
+
+
+class AppChangeModeState extends AppStates {}
+
+
+
