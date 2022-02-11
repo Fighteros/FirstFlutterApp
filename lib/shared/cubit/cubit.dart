@@ -8,6 +8,8 @@ import 'package:flutterapp/modules/new_tasks/new_tasks.dart';
 import 'package:flutterapp/shared/cubit/states.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../network/local/cache_helper.dart';
+
 class AppCubit extends Cubit<AppStates> {
   int currentIndex = 0;
   late Database database;
@@ -138,6 +140,8 @@ class AppCubit extends Cubit<AppStates> {
 
   void changeAppMode() {
     isDark = !isDark;
-    emit(AppChangeModeState());
+    CacheHelper.putData(key: 'isDark', value: isDark).then((value){
+      emit(AppChangeModeState());
+    });
   }
 }

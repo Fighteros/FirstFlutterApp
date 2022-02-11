@@ -7,6 +7,7 @@ import 'package:flutterapp/layout/news-app/cubit/states.dart';
 import 'package:flutterapp/shared/bloc_observer.dart';
 import 'package:flutterapp/shared/cubit/cubit.dart';
 import 'package:flutterapp/shared/cubit/states.dart';
+import 'package:flutterapp/shared/network/local/cache_helper.dart';
 import 'package:flutterapp/shared/network/remote/dio_helper.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -17,6 +18,7 @@ import 'layout/todo-app/todo_layout.dart';
 void main() {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
+  CacheHelper.init();
   runApp(MyApp());
 }
 
@@ -41,6 +43,7 @@ class MyApp extends StatelessWidget {
               ),
               scaffoldBackgroundColor: Colors.white,
               appBarTheme: AppBarTheme(
+                titleSpacing: 20.0 ,
                   iconTheme: IconThemeData(color: Colors.black),
                   titleTextStyle: TextStyle(
                     color: Colors.black,
@@ -73,6 +76,7 @@ class MyApp extends StatelessWidget {
               floatingActionButtonTheme:
               FloatingActionButtonThemeData(backgroundColor: Colors.deepPurple),
               appBarTheme: AppBarTheme(
+                  titleSpacing: 20.0 ,
                   iconTheme: IconThemeData(color: Colors.white),
                   titleTextStyle: TextStyle(
                     color: Colors.white,
