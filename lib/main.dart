@@ -15,23 +15,32 @@ import 'layout/news-app/cubit/cubit.dart';
 import 'layout/news-app/news-app.dart';
 import 'layout/todo-app/todo_layout.dart';
 
-void main() {
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
-  CacheHelper.init();
-  runApp(MyApp());
+  await CacheHelper.init();
+  bool? isDark = CacheHelper.getBoolean(key: 'isDark');
+  runApp(MyApp(isDark));
 }
 
 // two main widgets {Stateless - Stateful}
 // class MyApp
 
 class MyApp extends StatelessWidget {
+  final bool? isDark;
+
+  MyApp(this.isDark);
+
   @override
   // manager (which inside it is seen outside it isn't seen)
   Widget build(BuildContext context) {
     // must start my project with MaterialApp
     return BlocProvider(
-      create: (context) => AppCubit(),
+      create: (context) => AppCubit()..changeAppMode(
+        fromShared: isDark,
+      ),
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) => MaterialApp(
