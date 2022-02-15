@@ -84,11 +84,11 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   # add icon
-
+#
 flutter_icons:
-  image_path: "assets/icon/icon.ico"
+  image_path: "assets/icon/ic.png"
   android: true
-  ios: false
+  ios: true
 
 # add fonts
 #fonts:

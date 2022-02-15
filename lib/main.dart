@@ -37,10 +37,13 @@ class MyApp extends StatelessWidget {
   // manager (which inside it is seen outside it isn't seen)
   Widget build(BuildContext context) {
     // must start my project with MaterialApp
-    return BlocProvider(
-      create: (context) => AppCubit()..changeAppMode(
-        fromShared: isDark,
-      ),
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => NewsCubit()..getBusiness()),
+          BlocProvider(create: (context) => AppCubit()..changeAppMode(
+            fromShared: isDark,
+          ))
+        ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
         builder: (context, state) => MaterialApp(
